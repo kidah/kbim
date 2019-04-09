@@ -1,0 +1,164 @@
+{% extends 'kbim/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3> 
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-laptop"></i>Dashboard</li>
+            </ol>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box blue-bg">
+              <i class="fa fa-cloud-download"></i>
+              <div class="count">Access to 8</div>
+              <div class="title">Autodesk APIs</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <i class="fa fa-shopping-cart"></i>
+              <div class="count">Chat with 8</div>
+              <div class="title">VoiceBots</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box dark-bg">
+              <i class="fa fa-thumbs-o-up"></i>
+              <div class="count">Easy</div>
+              <div class="title">Natural Communication</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box green-bg">
+              <i class="fa fa-cubes"></i>
+              <div class="count">Redefining</div>
+              <div class="title">BIM360</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+
+            <div class="panel panel-default panel-chat">
+              <div class="panel-heading">
+                <h2><i class="fa fa-map-marker red"></i><strong>Quick Chat</strong></h2>
+                <div class="panel-actions">
+                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'kbim/img/bimbot.jpeg' %}" style="float:left" />
+                   <p> Hi, I'm BIMbot. You can ask me any questions about your BIM360 app. </p>
+                     
+                  </div>
+                  <div class="col-md-9 portlets">
+                        <!-- Widget -->
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <div class="pull-left">Chatbox</div>
+                            <div class="widget-icons pull-right">
+                              <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                              <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+            
+                          <div class="panel-body" >
+                            <!-- Widget content -->
+                            <div class="padd sscroll" style="min-height: 300px">
+            
+                              <ul class="chats">
+            
+                                <!-- Chat by us. Use the class "by-me". -->
+                                <li class="by-me">
+                                  <!-- Use the class "pull-left" in avatar -->
+                                  <div class="avatar pull-left">
+                                    <img src="{% static 'kbim/img/user.jpg' %}" alt="" />
+                                  </div>
+            
+                                  <div class="chat-content">
+                                    <!-- In meta area, first include "name" and then "time" -->
+                                    <div class="chat-meta">Sofiat </div>
+                                    {{ question }}
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </li>
+                                  
+                                <li class="by-other">
+                                  <!-- Use the class "pull-right" in avatar -->
+                                  <div class="avatar pull-right">
+                                    <img src="{% static 'kbim/img/bimbot.jpeg' %}" alt="" height="50px;" width="50px" />
+                                  </div>
+            
+                                  <div class="chat-content">
+                                    <!-- In the chat meta, first include "time" then "name" -->
+                                    <div class="chat-meta"><span class="pull-right">BIMbot</span></div>
+                                    {{ reply }}
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </li>
+            
+                              </ul>
+            
+                            </div>
+                            <!-- Widget footer -->
+                            <div class="widget-foot">
+            
+                              <form role="form" method="post" id="chatform">
+                                <div class="form-group">
+                                  {% csrf_token %}
+                                  <div class="cursor">
+                                   {{ form.message }} 
+                                  </div>    
+                                   <i></i>      
+                                </div>
+                              </form>
+            
+            
+                            </div>
+                          </div>
+            
+            
+                        </div>
+                      </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+       
+        </div>
+
+
+    <!--main content end-->
+  </section>
+  {% endblock %}

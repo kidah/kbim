@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="author" content="GeeksLabs">
+  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>Conversational BIM</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'kbim/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- bootstrap theme -->
+  <link href="{% static 'kbim/css/bootstrap-theme.css' %}" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="{% static 'kbim/css/elegant-icons-style.css' %}" rel="stylesheet" />
+  <link href="{% static 'kbim/css/font-awesome.min.css' %}" rel="stylesheet" />
+  <!-- full calendar css-->
+  <link href="{% static 'kbim/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css' %}" rel="stylesheet" />
+  <link href="{% static 'kbim/assets/fullcalendar/fullcalendar/fullcalendar.css' %}" rel="stylesheet" />
+  <!-- easy pie chart-->
+  <link href="{% static 'kbim/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css' %}" rel="stylesheet" type="text/css" media="screen" />
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="{% static 'kbim/css/owl.carousel.css' %}" type="text/css">
+  <link href="{% static 'kbim/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{% static 'kbim/css/fullcalendar.css' %}">
+  <link href="{% static 'kbim/css/widgets.css' %}" rel="stylesheet">
+  <link href="{% static 'kbim/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'kbim/css/style-responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'kbim/css/xcharts.min.css' %}" rel=" stylesheet">
+  <link href="{% static 'kbim/css/jquery-ui-1.10.4.min.css' %}" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: NiceAdmin
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+
+    <header class="header dark-bg">
+      <div class="toggle-nav">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="{% url 'kbim:home' %}" class="logo">Conversational <span class="lite">BIM 360</span></a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+
+      <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="img/avatar1_small.jpg">
+                            </span>
+                            <span class="username">Sofiat Abioye</span>
+                            <b class="caret"></b>
+                        </a>
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                <a href="#"><i class="icon_profile"></i> My Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_mail_alt"></i> History</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_key_alt"></i> Log Out</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_key_alt"></i> Documentation</a>
+              </li>
+            </ul>
+          </li>
+          <!-- user login dropdown end -->
+        </ul>
+        <!-- notificatoin dropdown end-->
+      </div>
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a class="" href="{% url 'kbim:home' %}">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+          </li>
+         
+          <li class="sub-menu">
+              <a href="javascript:;" class="">
+                            <i class="icon_table"></i>
+                            <span>BIM 360 API</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+              <ul class="sub">
+                <li><a class="" href="{% url 'kbim:details' 'bim360' %}">View Information</a></li>
+                <li><a class="" href="{% url 'kbim:chatapi' 'bim360' %}">Chat</a></li>
+              </ul>
+          </li>
+
+          <li class="sub-menu">
+              <a href="javascript:;" class="">
+                            <i class="icon_document_alt"></i>
+                            <span style="font-size: 70%">Data Management API</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+              <ul class="sub">
+                <li><a class="" href="{% url 'kbim:details' 'data-management' %}">View Information</a></li>
+                <li><a class="" href="{% url 'kbim:chatapi' 'data-management' %}">Chat</a></li>
+              </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                              <i class="icon_document_alt"></i>
+                              <span style="font-size: 75%">Model Derivative API</span>
+                              <span class="menu-arrow arrow_carrot-right"></span>
+                          </a>
+                <ul class="sub">
+                  <li><a class="" href="{% url 'kbim:details' 'model-derivative' %}">View Information</a></li>
+                  <li><a class="" href="{% url 'kbim:chatapi' 'model-derivative' %}">Chat</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                              <i class="icon_document_alt"></i>
+                              <span style="font-size: 73%">DesignAutomation API</span>
+                              <span class="menu-arrow arrow_carrot-right"></span>
+                          </a>
+                <ul class="sub">
+                  <li><a class="" href="{% url 'kbim:details' 'design-automation' %}">View Information</a></li>
+                  <li><a class="" href="{% url 'kbim:chatapi' 'design-automation' %}">Chat</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                              <i class="icon_document_alt"></i>
+                              <span style="font-size: 75%">Reality Capture API</span>
+                              <span class="menu-arrow arrow_carrot-right"></span>
+                          </a>
+                <ul class="sub">
+                  <li><a class="" href="{% url 'kbim:details' 'reality-capture' %}">View Information</a></li>
+                  <li><a class="" href="{% url 'kbim:chatapi' 'reality-capture' %}">Chat</a></li>
+                </ul>
+            </li>
+        
+          
+
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_table"></i>
+                          <span>Webhooks API</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="{% url 'kbim:details' 'webhooks' %}">View Information</a></li>
+              <li><a class="" href="{% url 'kbim:chatapi' 'webhooks' %}">Chat</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_table"></i>
+                          <span>Token Flex API</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="{% url 'kbim:details' 'tokenflex' %}">View Information</a></li>
+              <li><a class="" href="{% url 'kbim:chatapi' 'tokenflex' %}">Chat</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_documents_alt"></i>
+                          <span>Documentation</span>
+                      </a>
+          </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+        {% block content %}
+
+        {% endblock %}
+  </section>
+
+</section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+  <script src="{% static 'kbim/js/jquery.js' %}"></script>
+  <script src="{% static 'kbim/js/jquery-ui-1.10.4.min.js' %}"></script>
+  <script src="{% static 'kbim/js/jquery-1.8.3.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'kbim/js/jquery-ui-1.9.2.custom.min.js' %}"></script>
+  <!-- bootstrap -->
+  <script src="{% static 'kbim/js/bootstrap.min.js' %}"></script>
+  <!-- nice scroll -->
+  <script src="{% static 'kbim/js/jquery.scrollTo.min.js' %}"></script>
+  <script src="{% static 'kbim/js/jquery.nicescroll.js' %}" type="text/javascript"></script>
+  <!-- charts scripts -->
+  <script src="{% static 'kbim/assets/jquery-knob/js/jquery.knob.js' %}"></script>
+  <script src="{% static 'kbim/js/jquery.sparkline.js' %}" type="text/javascript"></script>
+  <script src="{% static 'kbim/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js' %}"></script>
+  <script src="{% static 'kbim/js/owl.carousel.js' %}"></script>
+  <!-- jQuery full calendar -->
+  <script src="{% static 'kbim/js/fullcalendar.min.js' %}"></script>
+    <!-- Full Google Calendar - Calendar -->
+    <script src="{% static 'kbim/assets/fullcalendar/fullcalendar/fullcalendar.js' %}"></script>
+    <!--script for this page only-->
+    <script src="{% static 'kbim/js/calendar-custom.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery.rateit.min.js' %}"></script>
+    <!-- custom select -->
+    <script src="{% static 'kbim/js/jquery.customSelect.min.js' %}"></script>
+    <script src="{% static 'kbim/assets/chart-master/Chart.js' %}"></script>
+
+    <!--custome script for all page-->
+    <script src="{% static 'kbim/js/scripts.js' %}"></script>
+    <!-- custom script for this page-->
+    <script src="{% static 'kbim/js/sparkline-chart.js' %}"></script>
+    <script src="{% static 'kbim/js/easy-pie-chart.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery-jvectormap-1.2.2.min.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static 'kbim/js/xcharts.min.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery.autosize.min.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery.placeholder.min.js' %}"></script>
+    <script src="{% static 'kbim/js/gdp-data.js' %}"></script>
+    <script src="{% static 'kbim/js/morris.min.js' %}"></script>
+    <script src="{% static 'kbim/js/sparklines.js' %}"></script>
+    <script src="{% static 'kbim/js/charts.js' %}"></script>
+    <script src="{% static 'kbim/js/jquery.slimscroll.min.js' %}"></script>
+    <script>
+      //knob
+      $(function() {
+        $(".knob").knob({
+          'draw': function() {
+            $(this.i).val(this.cv + '%')
+          }
+        })
+      });
+
+      //carousel
+      $(document).ready(function() {
+        $("#owl-slider").owlCarousel({
+          navigation: true,
+          slideSpeed: 300,
+          paginationSpeed: 400,
+          singleItem: true
+
+        });
+      });
+
+      //custom select box
+
+      $(function() {
+        $('select.styled').customSelect();
+      });
+
+      /* ---------- Map ---------- */
+      $(function() {
+        $('#map').vectorMap({
+          map: 'world_mill_en',
+          series: {
+            regions: [{
+              values: gdpData,
+              scale: ['#000', '#000'],
+              normalizeFunction: 'polynomial'
+            }]
+          },
+          backgroundColor: '#eef3f7',
+          onLabelShow: function(e, el, code) {
+            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+          }
+        });
+      });
+    
+    </script>
+
+</body>
+
+</html>

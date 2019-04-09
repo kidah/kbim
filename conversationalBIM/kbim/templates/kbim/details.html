@@ -1,0 +1,53 @@
+{% extends 'kbim/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3> 
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-viewer"></i>About</li>
+            </ol>
+
+          </div>
+        </div>
+
+  
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2><i class="fa fa-book"></i><strong>{{api_name}} API Information</strong></h2>
+                <div class="panel-actions">
+                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                    <p style="padding: 10px; padding-left:30px; font-size:120%">The BIM 360 Account Admin API automates setting up projects, assigning project admins, and managing member and partner company directories. You can also synchronize data with external systems.
+                    The BIM 360 Document Management API accesses, uploads, and shares 2D plans, 3D BIM models, and any other project documents to maximize collaboration. Note that the BIM 360 Document Management API is part of the Data Management API.
+                    You can view BIM 360 models in your own application using the Forge Viewer.</p>
+                    <ol style="font-size:120%">
+                       <li>The BIM 360 Issues API creates, tracks, and updates issues. An issue is an item that is created in BIM 360 for tracking, managing and communicating problems and other points of concern through to resolution. You can manage different types of issues, such as design, safety, and commissioning. We support both issues that are associated with a project and issues that are associated with a specific document (pushpin issues).</li>
+                       <li>BIM 360 RFIs API creates, tracks, and updates RFIs (requests for information). An RFI is a formal question asked by one project member of another, such as clarification of design intent from the architect. You can manage the RFI workflow by assigning members to the RFI, transitioning the RFI to different states, and adding comments and attachments. We support both RFIs that are associated with a project and RFIs that are associated with a specific document (pushpin RFIs). For more information about RFIs, see the help documentation.</li>
+                       <li>The BIM 360 Checklists API tracks, sorts, and filters information about checklists and checklist templates.</li>
+                    </ol>
+                </div>
+              </div>
+
+            </div>
+          </div>
+       
+        </div>
+
+
+    <!--main content end-->
+  </section>
+  {% endblock %}
